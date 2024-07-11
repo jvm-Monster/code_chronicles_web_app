@@ -1,22 +1,63 @@
+'use client';
 import Story from "@/app/interfaces/Story";
 import React from "react";
 import Link from "next/link";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faEdit} from "@fortawesome/free-solid-svg-icons";
+import {usePathname} from "next/navigation";
+import moment from "moment-timezone";
+import Image from "next/image";
 
-const StoryCard:React.FC<Story> = ({id,title,description,datePublished,publishedBy}) => {
+const StoryCard:React.FC<Story> = ({id,title,description,datePublished,imageUrl,author}) => {
+    const path = usePathname();
+
+    const formatZoneDateTime = (dateString:string)=>{
+        const date = moment(dateString);
+
+        // Get the user's timezone
+        const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+        // Convert to user's timezone
+        const userZonedDate = date.tz(userTimeZone);
+
+        // Formatting the date
+        return userZonedDate.format("yyyy-MM-DD HH:mm");
+    }
     return (
         <>
-            <div className="card max-w-2xl bg-base-300">
-                <figure><img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                             alt="car!"/></figure>
-                <div className="card-body">
-                    <h2 className="card-title">Life hack</h2>
-                    <p>How to park your car at your garage?</p>
-                    <div className="card-actions justify-end">
-                        <Link href={`/stories/${id}`} className="btn btn-primary">Debug now!</Link>
+
+            <div className="p-5 rounded-2xl shadow-xl flex flex-col justify-between">
+                <div className={"space-y-2"}>
+                    <div className={``}>
+                        <p className={"font-bold text-xl "}>{title}</p>
+                        {path === "/admin" &&
+                            <Link href={`admin/${id}`} className="flex justify-end"><FontAwesomeIcon
+                                icon={faEdit}/></Link>}
+                    </div>
+
+
+                    <p>by {author}</p>
+
+                    {/*<img className={"rounded-2xl min-w-52 max-h-52"} src={imageUrl} alt={"story cover image"}/>
+*/}
+                    <Image src={imageUrl} alt={"story cover image"} width={"1000"} height={"1000"} className={"rounded-lg"}/>
+
+                    <div className="">
+                        <p className={""}>{description}</p>
                     </div>
                 </div>
+
+                <div className={"flex justify-between items-center"}>
+                    <p className={"text-gray-600"}>{formatZoneDateTime(datePublished)}</p>
+                    <Link href={`/stories/${id}`} className={"btn primary"} onClick={event => {
+                    }}>Read</Link>
+                </div>
+
+
             </div>
+
         </>
-    );
+    )
+        ;
 };
 export default StoryCard;

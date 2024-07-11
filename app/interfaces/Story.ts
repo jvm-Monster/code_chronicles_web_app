@@ -4,6 +4,8 @@ interface Story{
     id:number;
     title:string;
     description:string;
+    imageUrl:string;
+    link:string;
     datePublished:string;
     author:string;
     content:Array<Chapter>;

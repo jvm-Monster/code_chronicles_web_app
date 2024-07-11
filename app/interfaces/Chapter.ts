@@ -5,3 +5,27 @@ interface Chapter{
 }
 
 export default Chapter;
+
+/*
+*
+* [
+*   {
+*      number:1,
+*      chapter:title;
+*      content:string;
+* }
+*
+* {
+*      number:1,
+*      chapter:title;
+*      content:string;
+* }
+*
+* {
+*      number:1,
+*      chapter:title;
+*      content:string;
+* }
+* ]
+*
+* */

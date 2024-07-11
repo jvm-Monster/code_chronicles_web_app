@@ -3,7 +3,7 @@ import Image from "next/image";
 const Hero = () => {
     return (
         <>
-            <div className="hero  bg-base-200 p-5">
+            <div className="hero  bg-base-200 p-5 rounded-2xl">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img
                         alt={"hero image"}
