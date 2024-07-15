@@ -6,7 +6,7 @@ export interface ResponseType<T> {
     error: boolean;
     loading: boolean;
 }
-const baseUrl = "http://localhost:8081/code-chronicles/api/";
+const baseUrl = "http://172.28.151.25:8089/code-chronicles/api/";
 const useFetch = <T,>(attachedUrl: string): ResponseType<T> => {
     const [data, setData] = useState<T | null>(null);
     const [error, setError] = useState<boolean>(false);

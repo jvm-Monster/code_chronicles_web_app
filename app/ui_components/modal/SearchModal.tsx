@@ -31,11 +31,8 @@ const SearchModal = () => {
                     <h3 className="font-bold text-xl">CodeChronicles search engine</h3>
                     <SearchInput placeholder={"Search for stories here"}/>
                     <SearchStoryLIst/>
-                    <p className="py-4">Click the button below to close</p>
                     <div className="modal-action">
-                        <form method="dialog">
-                            <button className="btn" onClick={closeModal}>Close</button>
-                        </form>
+                        <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={closeModal}>✕</button>
                     </div>
                 </div>
             </dialog>

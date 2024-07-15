@@ -6,7 +6,7 @@ import {next} from "sucrase/dist/types/parser/tokenizer";
 
 async function getData() {
   try{
-    const res = await fetch(`http://localhost:8081/code-chronicles/api/stories?start=0&&end=4`,{cache:'no-cache'});
+    const res = await fetch(`http://172.28.151.25:8089/code-chronicles/api/stories?start=0&&end=4`,{cache:'no-cache'});
 
     if (!res.ok) {
       // This will activate the closest `error.js` Error Boundary

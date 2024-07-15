@@ -4,11 +4,11 @@ export const MeetTheTeam = () => {
     return (
         <>
             <div className={"space-y-10"}>
-                <h1 className={"text-3xl font-bold"}>
+                <h1 className={"text-3xl font-bold flex justify-center"}>
                     {"Meet the Team"}
                 </h1>
 
-                <div className={"flex justify-between space-x-10  p-5 rounded-2xl shadow-2xl text-justify"}>
+                <div className={"flex max-xl:flex-col justify-between max-xl:space-x-0 max-xl:space-y-5 space-x-10  p-5 rounded-2xl shadow-2xl text-justify"}>
                     <div className={"space-y-5"}>
                         <h1 className={"font-bold text-xl"}>Thompson (Developer & Visionary)</h1>
                         <p className={""}>

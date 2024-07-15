@@ -9,7 +9,7 @@ import {AStoryContent} from "@/app/ui_components/a_story_components/AStoryConten
 
 const AStory= ({ params }:{ params:{id:string} }) => {
     const [selectedChapterIndex,onSetSelectedChapterIndex] = useState(0);
-    const story = useFetch<Story>(`stories/${params.id}`)
+    const story = useFetch<Story>(`stories/${params.id}`);
 
 
     return (

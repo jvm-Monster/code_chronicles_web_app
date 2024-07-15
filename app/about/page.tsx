@@ -6,8 +6,8 @@ const About = () => {
         <>
 
             <main className={"container mx-auto pt-20 space-y-20"}>
-                <h1 className={"text-6xl"}>Get To Know Us!</h1>
-                <div className={"grid grid-cols-3 gap-10"}>
+                <h1 className={"text-6xl max-xl:text-3xl flex justify-center"}>Get To Know Us!</h1>
+                <div className={"grid grid-cols-3 max-xl:grid-cols-1 gap-10 justify-items-center"}>
                     <AboutCard title={"About Code Chronicles"} message={"Welcome to Code Chronicles!\n" +
                         "\n" +
                         "At Code Chronicles, we believe that programming is more than just code; it's a journey, a story waiting to be told. Our mission is to bring programming concepts to life through engaging and relatable narratives. Whether you're a beginner or an experienced coder, we hope our stories inspire you and spark your creativity."}/>

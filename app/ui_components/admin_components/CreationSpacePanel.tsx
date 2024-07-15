@@ -8,9 +8,10 @@ const CreationSpacePanel = ({chapters,onSelectChapter,hoverIndex}:{chapters:Arra
     return (
 
         <>
-                <ul className={"space-y-5  min-w-96 max-lg:hidden  max-xl:pt-5"}>
+                <ul className={"space-y-5 lg:min-w-96 xl:min-w-96 max-xl:pt-5 "}>
                     <h1 className={"text-2xl"}>Chapters</h1>
-                    <div className={"max-h-96 overflow-y-scroll space-y-5"}>
+
+                    <div className={"xl:max-h-96 xl:overflow-y-scroll space-y-5 "}>
                         {chapters.map((chapter, index) => <li key={chapter.id}>
                             <button
                                 className={`btn btn-lg w-fit h-fit   ${hoverIndex === index ? "btn-primary text-black" : "btn-ghost"}    shadow-xl`}
